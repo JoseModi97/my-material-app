@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS HTTP Requests</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="MainController as ctrl">
+    <h1>AngularJS HTTP Examples</h1>
+
+    <div>
+        <h2>GET Request (User Data)</h2>
+        <button ng-click="ctrl.getPost()">Fetch Post</button>
+        <div ng-if="ctrl.post">
+            <h3>{{ ctrl.post.title }}</h3>
+            <p>{{ ctrl.post.body }}</p>
+        </div>
+        <p ng-if="ctrl.getError" style="color: red;">Error: {{ ctrl.getError }}</p>
+    </div>
+
+    <div>
+        <h2>POST Request (Create Post - Simulated)</h2>
+        <button ng-click="ctrl.createPost()">Create Post</button>
+        <p ng-if="ctrl.postResponse">Response: <pre>{{ ctrl.postResponse | json }}</pre></p>
+        <p ng-if="ctrl.postError" style="color: red;">Error: {{ ctrl.postError }}</p>
+    </div>
+
+    <div>
+        <h2>PUT Request (Update Post - Simulated)</h2>
+        <button ng-click="ctrl.updatePost()">Update Post</button>
+        <p ng-if="ctrl.putResponse">Response: <pre>{{ ctrl.putResponse | json }}</pre></p>
+        <p ng-if="ctrl.putError" style="color: red;">Error: {{ ctrl.putError }}</p>
+    </div>
+
+    <div>
+        <h2>DELETE Request (Delete Post - Simulated)</h2>
+        <button ng-click="ctrl.deletePost()">Delete Post</button>
+        <p ng-if="ctrl.deleteResponse">Response: <pre>{{ ctrl.deleteResponse | json }}</pre></p>
+        <p ng-if="ctrl.deleteError" style="color: red;">Error: {{ ctrl.deleteError }}</p>
+    </div>
+
+</body>
+</html>
