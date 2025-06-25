@@ -1,0 +1,40 @@
+<div>
+    <h2>PUT Request - Update Existing Post</h2>
+    <div>
+        <label for="postIdToUpdate">Post ID to Update/Fetch:</label>
+        <input type="number" id="postIdToUpdate" ng-model="ctrl.updatePostData.id">
+        <button ng-click="ctrl.fetchPostForUpdate(ctrl.updatePostData.id)">Fetch Post to Update</button>
+    </div>
+
+    <div ng-if="ctrl.fetchForUpdateError" class="error-message">
+        {{ ctrl.fetchForUpdateError }}
+    </div>
+
+    <form name="updatePostForm" ng-submit="ctrl.submitUpdatePost(updatePostForm.$valid)" novalidate ng-if="ctrl.updatePostData.title !== undefined">
+        <input type="hidden" ng-model="ctrl.updatePostData.id"> <!-- Keep ID -->
+        <div>
+            <label for="updatePostTitle">Title:</label>
+            <input type="text" id="updatePostTitle" ng-model="ctrl.updatePostData.title" required>
+            <span ng-show="updatePostForm.updatePostTitle.$touched && updatePostForm.updatePostTitle.$error.required" class="error-message">Title is required.</span>
+        </div>
+        <div>
+            <label for="updatePostBody">Body:</label>
+            <textarea id="updatePostBody" ng-model="ctrl.updatePostData.body" required></textarea>
+            <span ng-show="updatePostForm.updatePostBody.$touched && updatePostForm.updatePostBody.$error.required" class="error-message">Body is required.</span>
+        </div>
+        <div>
+            <label for="updatePostUserId">User ID:</label>
+            <input type="number" id="updatePostUserId" ng-model="ctrl.updatePostData.userId" required>
+            <span ng-show="updatePostForm.updatePostUserId.$touched && updatePostForm.updatePostUserId.$error.required" class="error-message">User ID is required.</span>
+        </div>
+        <button type="submit" ng-disabled="updatePostForm.$invalid">Update Post</button>
+    </form>
+
+    <div ng-if="ctrl.updatePostStatus" ng-class="{'success-message': !ctrl.updatePostError, 'error-message': ctrl.updatePostError}">
+        {{ ctrl.updatePostStatus }}
+    </div>
+    <div ng-if="ctrl.updatedPostResponseData">
+        <h4>Updated Post Response (Simulated):</h4>
+        <pre>{{ ctrl.updatedPostResponseData | json }}</pre>
+    </div>
+</div>

@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover, nav a.active { /* Assuming some JS might add 'active' class later, or using ng-class */
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative; /* Changed from fixed for better flow */
+    bottom: 0;
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #555;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+ul li hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #e6ffe6;
+    border: 1px solid #b3ffb3;
+    border-radius: 4px;
+}
+
+/* Specific view adjustments if needed */
+/* get-view.html */
+.get-view-post-details button {
+    margin-left: 10px;
+}
+
+/* delete-view.html */
+.delete-view-list-item button {
+    margin-left: 10px;
+    background-color: #d9534f; /* Red for delete */
+}
+.delete-view-list-item button:hover {
+    background-color: #c9302c;
+}
+
+/* Clearing floats or other layout helpers if needed */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

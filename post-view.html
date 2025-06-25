@@ -1,0 +1,29 @@
+<div>
+    <h2>POST Request - Create New Post</h2>
+    <form name="createPostForm" ng-submit="ctrl.submitNewPost(createPostForm.$valid)" novalidate>
+        <div>
+            <label for="postTitle">Title:</label>
+            <input type="text" id="postTitle" ng-model="ctrl.newPostData.title" required>
+            <span ng-show="createPostForm.postTitle.$touched && createPostForm.postTitle.$error.required" class="error-message">Title is required.</span>
+        </div>
+        <div>
+            <label for="postBody">Body:</label>
+            <textarea id="postBody" ng-model="ctrl.newPostData.body" required></textarea>
+            <span ng-show="createPostForm.postBody.$touched && createPostForm.postBody.$error.required" class="error-message">Body is required.</span>
+        </div>
+        <div>
+            <label for="postUserId">User ID:</label>
+            <input type="number" id="postUserId" ng-model="ctrl.newPostData.userId" required>
+            <span ng-show="createPostForm.postUserId.$touched && createPostForm.postUserId.$error.required" class="error-message">User ID is required.</span>
+        </div>
+        <button type="submit" ng-disabled="createPostForm.$invalid">Create Post</button>
+    </form>
+
+    <div ng-if="ctrl.createPostStatus" ng-class="{'success-message': !ctrl.createPostError, 'error-message': ctrl.createPostError}">
+        {{ ctrl.createPostStatus }}
+    </div>
+    <div ng-if="ctrl.createdPostData">
+        <h4>Created Post (Simulated):</h4>
+        <pre>{{ ctrl.createdPostData | json }}</pre>
+    </div>
+</div>

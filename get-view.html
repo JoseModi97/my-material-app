@@ -1,0 +1,32 @@
+<div>
+    <h2>GET Requests</h2>
+
+    <div>
+        <h3>Fetch All Posts</h3>
+        <button ng-click="ctrl.getAllPosts()">Get All Posts</button>
+        <div ng-if="ctrl.allPostsError" class="error-message">{{ ctrl.allPostsError }}</div>
+        <ul ng-if="ctrl.allPosts.length > 0">
+            <li ng-repeat="post in ctrl.allPosts | limitTo:10"> <!-- Limiting for brevity -->
+                <h4>{{ post.id }}: {{ post.title }}</h4>
+                <p>{{ post.body }}</p>
+                <button ng-click="ctrl.getPostById(post.id)">View Details</button>
+                <hr>
+            </li>
+        </ul>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <div>
+        <h3>Fetch Single Post by ID</h3>
+        <div>
+            <input type="number" ng-model="ctrl.postIdToFetch" placeholder="Enter Post ID">
+            <button ng-click="ctrl.getPostById(ctrl.postIdToFetch)">Fetch Post</button>
+        </div>
+        <div ng-if="ctrl.singlePostError" class="error-message">{{ ctrl.singlePostError }}</div>
+        <div ng-if="ctrl.singlePost">
+            <h4>{{ ctrl.singlePost.id }}: {{ ctrl.singlePost.title }}</h4>
+            <p>{{ ctrl.singlePost.body }}</p>
+        </div>
+    </div>
+</div>

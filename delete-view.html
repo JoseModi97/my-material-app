@@ -1,0 +1,29 @@
+<div>
+    <h2>DELETE Request - Delete Post</h2>
+    <div>
+        <label for="postIdToDelete">Post ID to Delete:</label>
+        <input type="number" id="postIdToDelete" ng-model="ctrl.postIdToDelete">
+        <button ng-click="ctrl.submitDeletePost(ctrl.postIdToDelete)" ng-disabled="!ctrl.postIdToDelete">Delete Post</button>
+    </div>
+
+    <div ng-if="ctrl.deletePostStatus" ng-class="{'success-message': !ctrl.deletePostError, 'error-message': ctrl.deletePostError}">
+        {{ ctrl.deletePostStatus }}
+    </div>
+     <div ng-if="ctrl.deletedPostResponseData">
+        <h4>Delete Response (Simulated):</h4>
+        <pre>{{ ctrl.deletedPostResponseData | json }}</pre>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <h3>Or Delete from List:</h3>
+    <button ng-click="ctrl.getAllPostsForDelete()">Load Posts to Delete</button>
+    <div ng-if="ctrl.allPostsForDeleteError" class="error-message">{{ ctrl.allPostsForDeleteError }}</div>
+    <ul ng-if="ctrl.allPostsForDelete.length > 0">
+        <li ng-repeat="post in ctrl.allPostsForDelete | limitTo:5"> <!-- Limiting for brevity -->
+            <span>{{ post.id }}: {{ post.title }}</span>
+            <button ng-click="ctrl.submitDeletePost(post.id)" style="margin-left: 10px;">Delete This Post</button>
+            <hr>
+        </li>
+    </ul>
+</div>
