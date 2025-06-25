@@ -1,0 +1,37 @@
+.sidenav-container
+  height: 100vh
+
+.sidenav
+  width: 250px
+  padding: 10px // Optional: adds some padding inside the sidenav
+
+.mat-toolbar
+  display: flex
+  align-items: center
+
+  button[mat-icon-button]
+    margin-right: 10px
+
+.main-content
+  padding: 20px
+  // Styles for your main content area
+
+// Ensure icons are vertically aligned with text in nav list
+.mat-nav-list .mat-list-item
+  mat-icon
+    vertical-align: middle
+
+// Adjust title if needed
+.mat-list-item .mat-list-item-content .mat-line
+  display: flex
+  align-items: center
+
+  mat-icon
+    margin-right: 8px // Space between icon and text if matListItemIcon is not used directly on icon
+
+// If using matListItemIcon on mat-icon, this might not be needed,
+// but sometimes direct styling helps fine-tune.
+// For instance, to ensure the text itself is also aligned if it wraps or has different font sizes.
+span[matListItemTitle]
+  line-height: normal // Or adjust as needed to align with icon center
+  vertical-align: middle

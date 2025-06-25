@@ -1,6 +1,6 @@
-# MyMaterialApp
+# Angular Material Learning Sandbox
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+This project is a sandbox environment for learning and experimenting with Angular Material components.
 
 ## Development server
 
@@ -12,48 +12,18 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Angular Material
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This project is pre-configured with Angular Material. You can find the official documentation and examples at [material.angular.io](https://material.angular.io/).
 
-```bash
-ng generate component component-name
-```
+To add a new Material component, you'll typically:
+1. Import the component's module into your Angular module (e.g., `app.module.ts` or a specific feature module).
+2. Use the component's selector in your HTML templates.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Exploring Components
 
-```bash
-ng generate --help
-```
+The main application component is located in `src/app/`. You can modify `app.html` and `app.ts` to add and test different Angular Material components.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
+## Additional Angular Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
