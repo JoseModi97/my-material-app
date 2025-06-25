@@ -5,13 +5,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common'; // For ngIf, ngFor, etc.
-import { RouterOutlet } from '@angular/router'; // If you plan to use routing within the content
+import { RouterOutlet, RouterModule } from '@angular/router'; // If you plan to use routing within the content
 
 @Component({
   selector: 'app-main-layout',
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterModule, // Added RouterModule here
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
